@@ -1,0 +1,2 @@
+# LearningSQLThroughDoing
+SQL beginning trial
