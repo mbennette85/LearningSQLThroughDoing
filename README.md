@@ -41,7 +41,22 @@ SQL beginning trial
   FROM InvoiceLine
   WHERE InvoiceId = 37
   
-10.  
+10.SELECT InvoiceId, COUNT(*)
+   FROM InvoiceLine
+   GROUP BY InvoiceId
+   
+11.SELECT InvoiceLineId, InvoiceId, Track.TrackId, Track.Name
+FROM InvoiceLine
+JOIN Track
+ON Track.TrackId = InvoiceLine.TrackId
+
+12.
+13.
+14.SELECT Playlist.PlaylistId, Name, COUNT(TrackId)
+   FROM Playlist
+   JOIN PlaylistTrack
+   ON Playlist.PlaylistId=PlaylistTrack.PlaylistId
+   GROUP BY Playlist.PlaylistId
   
   
 
