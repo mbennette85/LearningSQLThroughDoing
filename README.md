@@ -16,4 +16,16 @@ SQL beginning trial
 5.SELECT DISTINCT BillingCountry
   FROM Invoice
 
-6.
+6.SELECT Employee.LastName, Employee.FirstName, InvoiceId, InvoiceDate
+  FROM Employee 
+  JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+  JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+
+7.SELECT Total, Customer.LastName, Customer.FirstName, Customer.Country, Employee.LastName, Employee.FirstName
+  FROM Employee 
+  JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+  JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+
+8.
+
+
