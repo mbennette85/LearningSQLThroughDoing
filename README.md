@@ -69,6 +69,21 @@ ON Track.TrackId = InvoiceLine.TrackId
    ON Playlist.PlaylistId=PlaylistTrack.PlaylistId
    GROUP BY Playlist.PlaylistId
   
-  
+15.SELECT Track.Name AS Track, Album.Title, MediaType.Name AS Medium, Genre.Name AS Genre
+   FROM Album
+   JOIN Track
+   ON Album.AlbumId  = Track.AlbumId
+   JOIN MediaType
+   ON MediaType.MediaTypeId= Track.MediaTypeId
+   JOIN Genre
+   ON Genre.GenreId = Track.GenreId   
 
+16.
 
+17.SELECT Employee.EmployeeId AS Id, Employee.LastName, Employee.FirstName, SUM( Total)
+FROM Invoice
+JOIN Customer
+ON Invoice.CustomerId = Customer.CustomerId
+JOIN Employee
+ON Employee.EmployeeId = Customer.SupportRepId
+GROUP BY Employee.EmployeeId
