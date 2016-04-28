@@ -50,8 +50,17 @@ FROM InvoiceLine
 JOIN Track
 ON Track.TrackId = InvoiceLine.TrackId
 
-12.
+12.SELECT InvoiceLineId, InvoiceId, Track.TrackId, Track.Name, Artist.Name
+   FROM InvoiceLine
+   JOIN Track
+   ON Track.TrackId = InvoiceLine.TrackId
+   JOIN Album
+   ON Album.AlbumId= Track.AlbumId
+   JOIN Artist
+   ON Artist.ArtistId= Album.ArtistId
+
 13.
+
 14.SELECT Playlist.PlaylistId, Name, COUNT(TrackId)
    FROM Playlist
    JOIN PlaylistTrack
