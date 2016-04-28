@@ -59,7 +59,9 @@ ON Track.TrackId = InvoiceLine.TrackId
    JOIN Artist
    ON Artist.ArtistId= Album.ArtistId
 
-13.
+13.SELECT BillingCountry, Count (InvoiceId)
+   FROM Invoice 
+   GROUP BY BillingCountry
 
 14.SELECT Playlist.PlaylistId, Name, COUNT(TrackId)
    FROM Playlist
