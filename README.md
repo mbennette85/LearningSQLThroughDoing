@@ -87,3 +87,14 @@ ON Invoice.CustomerId = Customer.CustomerId
 JOIN Employee
 ON Employee.EmployeeId = Customer.SupportRepId
 GROUP BY Employee.EmployeeId
+
+18.SELECT Employee.EmployeeId AS Id, Employee.LastName, Employee.FirstName, SUM(Total)
+FROM Invoice
+JOIN Customer
+ON Invoice.CustomerId = Customer.CustomerId
+JOIN Employee
+ON Employee.EmployeeId = Customer.SupportRepId
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
+GROUP BY Employee.EmployeeId
+
+19.
