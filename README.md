@@ -78,7 +78,10 @@ ON Track.TrackId = InvoiceLine.TrackId
    JOIN Genre
    ON Genre.GenreId = Track.GenreId   
 
-16.
+16.SELECT Invoice.InvoiceId, COUNT(InvoiceLineId) AS NumofLines
+   FROM Invoice
+   INNER JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+   GROUP BY Invoice.InvoiceId
 
 17.SELECT Employee.EmployeeId AS Id, Employee.LastName, Employee.FirstName, SUM( Total)
 FROM Invoice
@@ -156,3 +159,4 @@ ORDER BY BillingCountry DESC LIMIT 1
    INNER JOIN Track ON InvoiceLine.TrackId = Track.TrackId
    INNER JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId 
    GROUP BY MediaType.MediaTypeId
+
