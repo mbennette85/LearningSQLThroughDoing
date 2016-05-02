@@ -108,4 +108,9 @@ WHERE InvoiceDate
 GROUP BY Employee.EmployeeId
 ORDER BY Total ASC LIMIT 1
 
-20.
+20.SELECT Employee.LastName, Employee.FirstName, SUM(CustomerId) AS Total 
+FROM Customer
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+GROUP BY SupportRepId LIMIT 1
+
+21.
