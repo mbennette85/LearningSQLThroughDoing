@@ -149,3 +149,10 @@ ORDER BY BillingCountry DESC LIMIT 1
    INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId
    GROUP BY Artist.Name
    ORDER BY TotalDownloads DESC
+   
+25.SELECT MediaType.Name, COUNT(MediaType.MediaTypeId)
+   FROM InvoiceLine
+   INNER JOIN Invoice ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+   INNER JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+   INNER JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId 
+   GROUP BY MediaType.MediaTypeId
