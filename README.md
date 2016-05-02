@@ -141,4 +141,11 @@ ORDER BY BillingCountry DESC LIMIT 1
    GROUP BY Track.Name 
    ORDER BY TotalAmount DESC
 
-24.
+24.SELECT Artist.Name,  COUNT(InvoiceLineId) AS TotalDownloads
+   FROM InvoiceLine
+   INNER JOIN Invoice ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+   INNER JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+   INNER JOIN Album ON Track.AlbumId = Album.AlbumId
+   INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId
+   GROUP BY Artist.Name
+   ORDER BY TotalDownloads DESC
