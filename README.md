@@ -118,4 +118,27 @@ FROM Invoice
 GROUP BY BillingCountry
 ORDER BY BillingCountry DESC LIMIT 1
 
-22.
+22.SELECT 
+  Track.Name,
+  InvoiceLine.TrackId,
+  Invoice.InvoiceId,
+  COUNT(InvoiceLineId) AS TotalAmount
+  FROM InvoiceLine
+  inner join Invoice on Invoice.InvoiceId = InvoiceLine.InvoiceId
+  inner JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+  WHERE InvoiceDate BETWEEN '2013-01-01' AND '2013-12-31'
+  GROUP BY Track.Name 
+  ORDER BY TotalAmount DESC
+
+23.SELECT 
+   Track.Name,
+   InvoiceLine.TrackId,
+   Invoice.InvoiceId,
+   COUNT(InvoiceLineId) AS TotalAmount
+   FROM InvoiceLine
+   inner join Invoice on Invoice.InvoiceId = InvoiceLine.InvoiceId
+   inner JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+   GROUP BY Track.Name 
+   ORDER BY TotalAmount DESC
+
+24.
