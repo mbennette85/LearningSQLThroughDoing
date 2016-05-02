@@ -113,4 +113,9 @@ FROM Customer
 JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
 GROUP BY SupportRepId LIMIT 1
 
-21.
+21.SELECT BillingCountry, SUM(Total)
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY BillingCountry DESC LIMIT 1
+
+22.
